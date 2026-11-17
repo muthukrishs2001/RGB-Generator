@@ -1,0 +1,137 @@
+/* whole website font style link it's take to google font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap');
+
+/* universal zero style padding, margin and box sizing - border box */
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+/* color using to root */
+:root {
+    --primary: rgb(255, 255, 255);
+    --back: rgb(0, 0, 0);
+    --rest : rgb(255, 217, 1);
+    --submit : rgb(0, 119, 0);
+}
+
+/* overall */
+.overall {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* added so mobile views don't touch edges */
+}
+
+/* rgb box */
+.container {
+    min-height: 200px;
+    width: 35%;
+    background-color: var(--primary);
+    box-shadow: 0px 0px 10px var(--back);
+    border-radius: 10px;
+    border: 2px solid var(--back);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* top */
+.top {
+    min-height: 140px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+/* heading  */
+.heading {
+    font-size: 18px; /* Slightly adjusted for better mobile fitting */
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* rgb number generate place */
+#color {
+    font-family: "Science Gothic", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    font-variation-settings:
+        "slnt" 0,
+        "wdth" 100,
+        "CTRS" 0;
+}
+
+/* bottom */
+.bottom {
+    min-height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.bottom button {
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--rest);
+    color: var(--back);
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px var(--back);
+    transition: 0.7s ease-in-out;
+    font-weight: 600;
+}
+
+.bottom button+button {
+    background-color: var(--submit);
+    box-shadow: 0px 0px 10px var(--back);
+    color: var(--primary);
+}
+
+.bottom>button:active {
+    transform: scale(0.95); /* Smooth tactile touch feedback */
+    box-shadow: 0px 0px 0px;
+}
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+
+/* Tablet Screens (iPad / Tablets) */
+@media (max-width: 992px) {
+    .container {
+        width: 60%;
+    }
+}
+
+/* Mobile Screens (Phones) */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+    .heading {
+        font-size: 14px;
+    }
+    #color {
+        font-size: 20px;
+    }
+    .bottom {
+        flex-direction: column;
+        width: 100%;
+    }
+    .bottom button {
+        width: 100%;
+    }
+}
